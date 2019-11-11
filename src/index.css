@@ -11,3 +11,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.vertical-align-middle { vertical-align: middle; padding-bottom: 3px; }

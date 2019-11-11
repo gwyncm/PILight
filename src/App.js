@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import logo from './pilogo.png';
+import Menu from './menu';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+function App() {    
+
+  const [servdata, setServdata] = useState({ version: "1.0.0", username: "nobody", servtime: null  }); 
+
+       return(
+         <div style={{marginLeft: "5px", marginRight: "8px"}}>
+
+          <div className="row">
+            <div className="col-md-2">
+                <button className="btn btn-outline-secondary btn-sm" style={{ marginTop: '10px' }} data-toggle="collapse">
+                <i className="material-icons vertical-align-middle">menu</i></button>
+                <img src={ logo } alt="logo" 
+                    style={{ height: '55px', paddingTop: '5px' }}/>
+            </div>
+          
+            <div className="col-md-2">
+                <h3 style={{ paddingTop: '8px' }}>PILight Server</h3></div>
+            <div className="col-md-2">
+                <h3 style={{ paddingTop: '8px' }}>Version { servdata.version }</h3></div>
+          </div>
+
+          <Menu></Menu>
+      
+        </div>
+       )
+   }
 
 export default App;
