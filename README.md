@@ -1,5 +1,5 @@
-# PILight
-**Raspberry PI lighting control with React and NodeJS**
+# PI Web Control
+**Raspberry PI web lighting control with React and NodeJS**
 
 
 This project was created to allow web based control of IOT hubs such as the HUE.  
