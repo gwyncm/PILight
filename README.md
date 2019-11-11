@@ -3,13 +3,13 @@
 
 
 This project was created to allow web based control of IOT hubs such as the HUE.  
-Initial support for HUE with planned for other hubs in future.  
+Initial support for HUE with a plan for other hubs in future.  
 The server was intended to run on Raspberry PI to allow access to PI peripherals as
-well as local control via sensors and sehedules. 
+well as local control via sensors and schedules. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your Raspberry PI 
+These instructions will get the project up and running on your Raspberry PI for
 testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites

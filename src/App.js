@@ -19,7 +19,7 @@ function App() {
             </div>
           
             <div className="col-md-2">
-                <h3 style={{ paddingTop: '8px' }}>PILight Server</h3></div>
+                <h3 style={{ paddingTop: '8px' }}>PI Web Control</h3></div>
             <div className="col-md-2">
                 <h3 style={{ paddingTop: '8px' }}>Version { servdata.version }</h3></div>
           </div>
