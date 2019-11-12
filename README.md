@@ -73,7 +73,9 @@ Connect
 
 ### browse to your PI app ###
 
+```
 http://<your pi address>/piweb
+```
 
 Enjoy!
 
@@ -84,9 +86,9 @@ npm test
 
 ### You can also access the server via http
 
+```
 http://<your pi address>:8075/lights
 
-```
 <json result>
 
 ```

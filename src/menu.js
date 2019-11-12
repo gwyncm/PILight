@@ -189,7 +189,7 @@ export default function Menu(props) {
     }
 
    function putItem(type,item) {
-        var url = `${props.pihost}/${type}`
+        var url = `${props.pihost}/api/${type}`
         fetch(url,{ method: "PUT", body: JSON.stringify(item),
             headers: {'Content-Type': 'application/json'}
         }).then( response => {
