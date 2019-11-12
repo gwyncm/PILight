@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {    
 
-  const [servdata, setServdata] = useState({ version: "1.0.0", username: "nobody", servtime: null  }); 
+  const [servdata, setServdata] = useState({ version: "1.0.0", servtime: null, pihost: "" }); 
 
        return(
          <div style={{marginLeft: "5px", marginRight: "8px"}}>
@@ -24,7 +24,7 @@ function App() {
                 <h3 style={{ paddingTop: '8px' }}>Version { servdata.version }</h3></div>
           </div>
 
-          <Menu></Menu>
+          <Menu pihost={servdata.pihost}></Menu>
       
         </div>
        )

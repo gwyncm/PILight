@@ -36,6 +36,12 @@ Install the app
 ```
 git clone https://github.com/gwyncm/PIWebControl.git
 ```
+Move to project directory
+
+```
+cd PIWebControl
+```
+
 Install libraries
 
 ```
@@ -47,8 +53,6 @@ Build the app
 npm run build
 ```
 
-Create hue config
-
 Obtain a username/key here 
 
 [HUE getting started](https://developers.meethue.com/develop/get-started-2/)
@@ -56,10 +60,10 @@ Obtain a username/key here
 Create a file with the following format called config.hue in the project directory.
 
 ```
-{ "user" : "<your username>", "host" : "<bridge ip address" }
+{ "user" : "<your username>", "host" : "<bridge ip address>" }
 ```
 
-Run the app
+Run the app with logging
 
 ```
 node piserv.js --log
@@ -67,7 +71,9 @@ node piserv.js --log
 
 Connect
 
-browse to (http://<your pi address>/main
+### browse to your PI app ###
+
+http://<your pi address>/piweb
 
 Enjoy!
 
@@ -78,7 +84,7 @@ npm test
 
 ### You can also access the server via http
 
-http://x.x.x.x:8075/lights
+http://<your pi address>:8075/lights
 
 ```
 <json result>

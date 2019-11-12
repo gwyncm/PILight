@@ -9,6 +9,7 @@ const fs             =        require('fs')
 
 const PORT = 8075
 var LOGGING = false
+const VERSION = '1.0.1'
 
 function load_config(filename) {
     try {
@@ -43,9 +44,14 @@ app.use(function (req, res, next) {
   })
 
 app.use(express.static(path.join(__dirname, './build')))
-app.use('/pilight',express.static(path.join(__dirname, './build')));
+app.use('/piweb',express.static(path.join(__dirname, './build')));
 
-app.put('/light', function (req, res) {
+app.get('/api/servdata', (req,res) => res.send({
+    servtime: new Date().toISOString(),
+    version: VERSION
+    }))
+
+app.put('/api/light', function (req, res) {
     if (LOGGING) console.log("Body ",req.body)
     client.lights.getById(req.body.id)
         .then(light => {
@@ -58,7 +64,7 @@ app.put('/light', function (req, res) {
     })
 })
 
-app.put('/group', function (req, res) {
+app.put('/api/group', function (req, res) {
     if (LOGGING) console.log("Body ",req.body)
     client.groups.getById(req.body.id)
         .then(group => {
@@ -71,37 +77,37 @@ app.put('/group', function (req, res) {
     })
 })
 
-app.get('/lights', function (req, res) {
+app.get('/api/lights', function (req, res) {
     client.lights.getAll()
     .then(lights => {
         res.json(lights) })
 })
 
-app.get('/groups', function (req, res) {
+app.get('/api/groups', function (req, res) {
     client.groups.getAll()
     .then(groups => {
         res.json(groups) })
 })
 
-app.get('/sensors', function (req, res) {
+app.get('/api/sensors', function (req, res) {
     client.sensors.getAll()
   .then(sensors => {
         res.json(sensors) })
 })
 
-app.get('/schedules', function (req, res) {
+app.get('/api/schedules', function (req, res) {
   client.schedules.getAll()
   .then(scheds => {
         res.json(scheds) })
 })
 
-app.get('/scenes', function (req, res) {
+app.get('/api/scenes', function (req, res) {
     client.scenes.getAll()
     .then(scenes => {
           res.json(scenes) })
   })
 
-app.get('/rules', function (req, res) {
+app.get('/api/rules', function (req, res) {
     client.rules.getAll()
     .then(rules => {
           res.json(rules) })

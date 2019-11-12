@@ -1,7 +1,5 @@
 import React, { useState, useEffect} from 'react';
     
-const BASEURL = 'http://localhost:8075'
-
 function GroupShow(props) {
 
   
@@ -179,7 +177,7 @@ export default function Menu(props) {
     function setTheGroup(group) { setGroup(group) }
 
     function loadItems(type,setFunc) {
-        var url = `${BASEURL}/${type}`
+        var url = `${props.pihost}/api/${type}`
         fetch(url).then( response => {
             if (response.ok) {
                 response.json().then(
@@ -187,11 +185,11 @@ export default function Menu(props) {
                 }
             else
                 throw new Error(response.status+' '+response.statusText);
-            }).catch( () => { setFunc([]) })
+            })//.catch( () => { setFunc([]) })
     }
 
    function putItem(type,item) {
-        var url = `${BASEURL}/${type}`
+        var url = `${props.pihost}/${type}`
         fetch(url,{ method: "PUT", body: JSON.stringify(item),
             headers: {'Content-Type': 'application/json'}
         }).then( response => {
