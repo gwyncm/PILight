@@ -22,15 +22,56 @@ Nodejs
 Install NodeJS on your PI
 
 ```
-sudo apt install nodejs
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install -y nodejs
 
 ```
-
-Test installation
+Test node installation
 
 ```
 node --version
 ```
+Install the app
+
+```
+git clone https://github.com/gwyncm/PIWebControl.git
+```
+Install libraries
+
+```
+npm install
+```
+Build the app
+
+```
+npm run build
+```
+
+Create hue config
+
+Obtain a username/key here 
+
+[HUE getting started](https://developers.meethue.com/develop/get-started-2/)
+
+Create a file with the following format called config.hue in the project directory.
+
+```
+{ "user" : "<your username>", "host" : "<bridge ip address" }
+```
+
+Run the app
+
+```
+node piserv.js --log
+```
+
+Connect
+
+browse to (http://<your pi address>/main
+
+Enjoy!
+
+
 ## Running the tests
 
 npm test
