@@ -185,7 +185,7 @@ export default function Menu(props) {
                 }
             else
                 throw new Error(response.status+' '+response.statusText);
-            })//.catch( () => { setFunc([]) })
+            }).catch( () => { setFunc([]) })
     }
 
    function putItem(type,item) {
