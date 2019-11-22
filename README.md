@@ -87,7 +87,7 @@ npm test
 ### You can also access the server via http
 
 ```
-http://<your pi address>:8075/lights
+http://<your pi address>:8075/api/lights
 
 <json result>
 
