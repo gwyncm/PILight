@@ -2,6 +2,8 @@
   "name": "piserv",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://./piwebcontrol",
+  "proxy": "http://localhost:8075",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
